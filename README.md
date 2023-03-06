@@ -24,8 +24,6 @@ npm run test
 ```
 npm run lint
 ```
-### You can find google custom api from below url
-https://developers.google.com/custom-search/v1/using_rest
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
