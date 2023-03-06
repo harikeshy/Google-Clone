@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      api_key: "AIzaSyAGbDn1XB7_ru7NDO1NpoFv7rlrwBUWIRc", // Find from google custom search api
+      api_key: "AIzaSyAGbDn1XB7_ru7NDO1NpoFv7rlrwBUWIRc",
       cx: "9354c87c3301b4538",
       keyword: this.$route.params.query ? this.$route.params.query.split("-").join(" ") : "",   // replace "-" from texbox search with " "
       googleSearchResults: [],
@@ -35,7 +35,6 @@ export default {
   methods: {
     async search() {
       const queryString = this.keyword.split(" ").join("-");  // Replace in url "%20" means spaces with "-"
-      //console.log(queryString);
       this.$router.push({
         name: "ResultsData",
         params: { query: queryString },
@@ -59,7 +58,6 @@ export default {
       try {
         const res = await axios.get(`https://www.googleapis.com/customsearch/v1?key=${this.api_key}&cx=${this.cx}&q=${this.keyword}` );
         this.googleSearchResults = res.data.items;
-        //console.log(this.googleSearchResults);
       } catch (error) {
         console.log(error);
       }
